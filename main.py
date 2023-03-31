@@ -13,11 +13,18 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 messages = [
             {"role": "system", "content": "You are a helpful assistant."},
             ]
-print("---Welcome to Terminal-GPT---", end="\n\n")
+print("---Welcome to Terminal-GPT---")
+print('---Type "quit" to exit---')
 
 while (True):
     # Get user input
+    print("")
     user_input = input("Enter query: ")
+    if user_input == "":
+        continue
+    if user_input == "quit":
+        break
+
     messages.append({"role": "user", "content": user_input})
    
     response = openai.ChatCompletion.create(
@@ -27,8 +34,8 @@ while (True):
     )
 
     messages.append(response.choices[0].message)
-    print(response.choices[0].message.content)
+    print("\n" + response.choices[0].message.content)
 
     if (response.choices[0].finish_reason != "stop"):
-        print("You've exceeded the max supply of tokens. Please restart the program.")
+        print("\nYou've exceeded the max supply of tokens. Please restart the program.")
         break
