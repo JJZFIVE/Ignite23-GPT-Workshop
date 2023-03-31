@@ -13,6 +13,7 @@ Happy hacking!
 1. `pip install -r requirements.txt` - installs the dependencies
 1. Go to OpenAI and get an API key (https://platform.openai.com/account/api-keys)
 1. Create a file called `.env` and add this line: `OPENAI_API_KEY=YOUR OPEN AI KEY HERE FROM THE WEBSITE`
+1. You can use my api key for this workshop: `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`
 1. `python3 main.py` - runs the program
 
 (Note: how to freeze the venv into requirements.txt: `pip freeze > requirements.txt`)
