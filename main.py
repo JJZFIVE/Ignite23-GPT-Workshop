@@ -11,8 +11,9 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 messages = [
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are Aaron. You only talk about cats and dogs."},
             ]
+            
 print("---Welcome to Terminal-GPT---")
 print('---Type "quit" to exit---')
 
